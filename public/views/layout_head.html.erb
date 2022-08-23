@@ -1,0 +1,50 @@
+<link href="<%= "#{AppConfig[:public_proxy_prefix]}assets/fonts.css" %>" media="all" rel="stylesheet" type="text/css">
+<link href="<%= "#{AppConfig[:public_proxy_prefix]}assets/style.css" %>" media="all" rel="stylesheet" type="text/css">
+
+<link href="<%= "#{AppConfig[:public_proxy_prefix]}assets/menu.css" %>" media="all" rel="stylesheet" type="text/css">
+<link href="<%= "#{AppConfig[:public_proxy_prefix]}assets/js/cluetip/jquery.cluetip.css" %>" media="all" rel="stylesheet" type="text/css">
+
+<!--
+<script src="https://www.google.com/jsapi?key=ABQIAAAALdB1eS_hSC1tr-JGRnSZZhSpleSFzShuMzBLU83AILjhk6CU7RRQM-oCIO-QCBy8ux90WZROkdJVfQ" type="text/javascript"></script>
+<script language="Javascript" type="text/javascript">
+	try{
+		google.load("jquery", "1.6.2");
+	} catch (error) {
+		alert ("google.load ERROR: " + error);
+	}
+	// alert ("jquery? " + $.fn.jquery);
+</script> -->
+<!--<script type="text/javascript" src="<%= "#{AppConfig[:public_proxy_prefix]}assets/js" %>/jquery-1.6.2.min.js"></script>-->
+<script language="Javascript" type="text/javascript">
+  if (typeof (window.log) == "undefined") {
+    function log (s) {
+      if (window.console)
+        console.log(s);
+    }
+  }
+
+  function stringify (json) {
+    return JSON.stringify(json,null,2)
+  }
+
+
+  try{
+    // alert ("jquery? " + $.fn.jquery);
+  } catch (error) {
+    alert ("jquery.load ERROR: " + error);
+  }
+</script>
+<script type="text/javascript" src="<%= "#{AppConfig[:public_proxy_prefix]}assets/js" %>/superfish.js"></script>
+<script type="text/javascript" src="<%= "#{AppConfig[:public_proxy_prefix]}assets/js" %>/menu.js"></script>
+<script type="text/javascript" src="<%= "#{AppConfig[:public_proxy_prefix]}assets/js" %>/jquery-ui-personalized.js"></script>
+<script type="text/javascript" src="<%= "#{AppConfig[:public_proxy_prefix]}assets/js" %>/jquery.hoverIntent.js"></script>
+<script type="text/javascript" src="<%= "#{AppConfig[:public_proxy_prefix]}assets/js" %>/cluetip/jquery.cluetip.js"></script>
+<script type="text/javascript" src="<%= "#{AppConfig[:public_proxy_prefix]}assets/js" %>/jquery.corner.js"></script>
+<script type="text/javascript" src="<%= "#{AppConfig[:public_proxy_prefix]}assets/js" %>/jquery.scrollTo-min.js"></script>
+
+<style>
+  body {
+      background-image: url('<%= "#{AppConfig[:public_proxy_prefix]}" %>assets/images/bg-crop-2.jpg');
+  }
+</style>
+

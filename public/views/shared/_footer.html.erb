@@ -1,0 +1,66 @@
+<div class="container-fluid panel-footer">
+  <div class="row">
+    <div class="col-md-12">
+      <p class="footer-items"><a href="<%= AppConfig[:frontend_proxy_url] %>">Staff Interface</a>
+        | Visit <a href="http://archivesspace.org">ArchivesSpace.org</a>
+        | <%= ASConstants.VERSION %>
+        | <% if AppConfig[:feedback_url] && !AppConfig[:feedback_url].blank? %><a id='aspaceFeedbackLink' href='<%= AppConfig[:feedback_url]%>' target='_blank'>Send Feedback or Report a Problem</a><% end %></p>
+    </div>
+  </div>
+</div>
+
+<div id="orgNav-javascript"class="center">
+  <!-- OrgNavFooter Script -->
+  <script>
+
+    // CUSTOM VARIABLES
+    var contactLink = "mailto:ogg@ucar.edu";     // enter your Webmaster/Feedback link. Include http:// or mailto:
+    var hideOrgNav = false;        // hide the entire OrgNav from view
+    var hideFooter = false;          // hide the entire OrgFooter from view
+    var hideNSF = true;               // hide the NSF disclaimer
+    var footerColor = '#1B477C';       // hex color of the footer font including the #
+
+    // DO NOT EDIT BELOW THIS POINT
+    var jsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+    if(typeof jQuery === "undefined"){
+      document.write("<scr"+"ipt src='"+jsHost+"ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js' type='text/javascript'></scr"+"ipt>");
+    }
+    document.write("<scr"+"ipt src='"+jsHost+"orgnav.ucar.edu/orgnav.js' type='text/javascript'></scr"+"ipt>");
+  </script>
+  <noscript><iframe frameborder="0" width="100%" src="https://orgnav.ucar.edu"></iframe></noscript>
+  <!-- END OrgNavFooter Script -->
+</div>
+
+<div id="request-button-javascript" class="center">
+  <script>
+    // intercept request button
+    log ("archives_request_hidden: <%= AppConfig[:archives_request_hidden] %>")
+    if ("<%= AppConfig[:archives_request_hidden] %>" != "true") {
+      $('#request_sub button.btn.page_action.request')
+          .click(function (event) {
+            log("Intercepted request click");
+            event.preventDefault();
+            var $form = $(event.target).closest('form');
+            var request_uri = $form.find("input[name='request_uri']").val();
+            var title = $form.find("input[name='title']").val();
+            log("request_uri: " + request_uri);
+            log("title: " + title);
+            var params = {
+              target: request_uri,
+              title: title
+            }
+            var url = '<%= AppConfig[:archives_home] %>/forms/request-form?' + $.param(params);
+            log('URL: ' + url);
+            window.location = url;
+            return false;
+
+          })
+      log("hello from request_sub override")
+    }
+    else {
+      $('#request_sub button.btn.page_action.request')
+          .hide();
+    }
+  </script>
+
+</div>

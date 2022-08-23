@@ -1,0 +1,254 @@
+body {
+/* 	font-family: "UbuntuRegular","Lucida Grande",Verdana,Arial;
+	font-size:.9em; */
+	/*background-image: url('https://www.archives.ucar.edu/sites/default/themes/atmosnews-7.1/images/bg.jpg');*/
+	/*background-image: url('<%= "#{AppConfig[:public_prefix]}" %>assets/images/bg-crop.jpg');*/
+	background-position: top left;
+	background-repeat: repeat-x; 
+	/*background-color: #E3E4E6;*/ /* t:base */
+	/* color: #163B69; */ /* t:text */
+	padding:0;
+	margin:0;
+}
+
+/* --- ASPACE */
+#container-fluidOFF {
+	background:white;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+/* do we want to change that obnoxious blue? */
+h1 {
+	/*color:black;*/
+}
+
+/* ----- end Aspace */
+
+/* wraps the branding stuff and scopes customized styles */
+#branding-wrap {
+	position:relative;
+	top:0px;
+	margin:auto 0;
+	width:100%;
+	font-family: "UbuntuRegular","Lucida Grande",Verdana,Arial;
+	font-size:1.2em;
+	color: #163B69;
+	border-top: 1px solid #F8981D;
+	/*border:thin solid red;*/
+}
+
+#branding-header {
+	padding:0 0 10px 0;
+	margin:17px 0 0px 0;
+	text-align:left;
+	color: #fff;
+	/*background-color: #025081;*/
+	background-color: #163b69;
+}
+	
+#page_wrap,#header-wrap {
+	margin-left:auto;
+	margin-right:auto;	
+	width:940px;
+}
+
+#logo-floater {
+	float:left;
+	/*border:red thin solid;*/
+}
+
+.slogan {
+	float:left;
+	padding:5px 0 0 20px;
+	width:524px;
+	/*border:red solid thin;*/
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+	.slogan {
+		width:330px;
+		padding-top;
+
+	}
+	
+	.slogan>img {
+		width:300px;
+		/* height:50px; */
+		/* margin-top:13px;*/
+		/* border:1px orange solid; */
+	}
+	#logo>img {
+		width:350px;
+	}	
+}
+
+@media (max-width: 767px) {
+/*	.slogan {
+		display: none;
+	}*/
+	.slogan {
+		width:330px;
+		padding-top;
+		display:none; /* jlo */
+	}
+
+	.slogan>img {
+		width:300px;
+		/*height:50px;*/
+		margin-top:13px;
+		/* border:1px orange solid; */
+	}
+    #logo>img {
+		width:350px;
+    }
+}
+
+/* navigation styles the NCAR Archives links just below orgNav */
+#branding-navigation {
+    clear: both;
+    height: 20px;
+    margin: 0;
+    min-width: 990px;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    z-index: 99;
+    top:-3px;
+    /* border:thin solid #ff9900; */
+}
+
+#branding-navigation .content {
+    margin: 0;
+    padding: 0;
+}
+#branding-navigation ul {
+    margin: 0;
+    padding: 0;
+}
+#branding-navigation ul li, #branding-navigation ul.menu li {
+    float: left;
+    height: 28px;
+    list-style: none outside none;
+    margin: 1px 0 0;
+    padding: 0;
+}
+#branding-navigation ul li.first, #branding-navigation ul.menu li.first {
+    padding-left: 0;
+}
+#branding-navigation ul li a {
+    color: #DDDDDD;
+    display: block;
+    font-family: "UbuntuRegular","Lucida Grande",Verdana,Arial;
+    font-weight: normal;
+    padding: 12px 12px 10px;
+    text-decoration: none;
+    width: auto;
+}
+#branding-navigation ul ul li a {
+    color: #FF9900;
+    font-size: 10pt;
+    line-height: 5px;
+}
+#branding-navigation .block_container, #branding-navigation .content, #branding-navigation .content ul li {
+    background: none repeat scroll 0 0 transparent;
+    overflow: visible;
+    z-index: 99;
+}
+#branding-navigation #block-nice_menus-1 {
+    margin: 0;
+}
+
+.align-center-wrapper {
+    margin: 0 auto;
+    width: 980px;
+}
+
+.center {
+	text-align:center;
+}
+
+/* Rules for the text blurb on the front page of public view 
+(copy of archon - this text might not even be appropriate here ... */
+#themeindex{
+border:1px solid #ddd;
+padding:1em;
+/* width:900px; */
+margin:1em auto;
+/* background:#fff url('images/contentsgradient.gif') repeat-x top left; */
+background-color:#fff;
+
+}
+
+dd.index {
+color:#10375D;
+/*font-size:80%;
+*/
+padding-bottom:1.5em;
+padding-top:.5em;
+margin-left:0;
+}
+
+p.index {
+	color:#10375D;
+	/*font-size:80%;*/
+	padding-top:.5em;
+}
+
+dt.index {
+color:#10375D;
+/*font-size:80%;*/
+font-weight:700;
+}
+
+/* simulate the menu on the Archives home page */
+
+.navbar.navbar-default {
+	border:0;
+}
+
+#archives-menu-wrap {
+	background:#025081;
+	height:28px;
+}
+
+ul#archives-menu {
+
+	display:block;
+	list-style-type:none;
+	margin:auto;
+	width:970px;
+	padding:0;
+}
+
+ul#archives-menu li {
+	border-right:2px solid #163b69;
+	list-style-type:none;
+	display:inline;
+	width:auto;
+	padding: 7px 10px 9px 10px;
+	font-family: "UbuntuBold";
+	font-size:12px;
+	letter-spacing:2px;
+	color:white;
+	background-color: #025081;
+	text-transform:uppercase;
+	text-decoration:none;
+	margin:0;
+}
+
+ul#archives-menu a {
+	font-family: "UbuntuBold";
+	font-size:12px;
+	letter-spacing:2px;
+	color:white;
+	background-color: #025081;
+	text-transform:uppercase;
+	text-decoration:none;
+}
+
+
+ul#archives-menu li.selected,
+ul#archives-menu a:hover {
+	color:orange;
+}
